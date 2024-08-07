@@ -114,9 +114,9 @@ graph TD
 ```
 
 #### Esquema de la Base de Datos
-```mermaid 
 
-    erDiagram
+```mermaid
+erDiagram
     USERS {
         int user_id PK
         string name
