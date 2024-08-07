@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventario de Piezas de Coche</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+       .container {
+            width: 80%;
+            margin: 40px auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+       .header {
+            background-color: #2196f3;
+            color: #fff;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+       .header h2 {
+            margin: 0;
+        }
+
+       .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f0f0;
+        }
+
+       .btn {
+            background-color: #2196f3;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+       .btn:hover {
+            background-color: #1976d2;
+        }
+
+       .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Inventario de Piezas de Coche</h2>
+        </div>
+        <div class="table-container">
+            <table id="inventory-table">
+                <tr>
+                    <th>Nombre de la Pieza</th>
+                    <th>Numero de la Pieza</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Descripcion</th>
+                    <th>Acciones</th>
+                </tr>
+                <!-- Inventory data will be displayed here -->
+            </table>
+        </div>
+        <div class="button-container">
+            <a href="add_part.html" class="btn">Agregar Pieza de Coche</a>
+        </div>
+
+        <script>
+            // Make an AJAX request to inventory.php to fetch the data
+            fetch('inventory.php')
+              .then(response => response.json())
+              .then(data => {
+                    const tableBody = document.getElementById('inventory-table').tbody;
+                    data.forEach(part => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${part.part_name}</td>
+                            <td>${part.part_number}</td>
+                            <td>${part.price}</td>
+                            <td>${part.quantity}</td>
+                            <td>${part.description}</td>
+                            <td> <!-- add actions here, e.g. edit, delete --> </td>
+                        `;
+                        tableBody.appendChild(row);
+                    });
+                })
+              .catch(error => console.error('Error fetching data:', error));
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!-- add_part.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Agregar Pieza de Coche</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+     .container {
+            width: 80%;
+            margin: 40px auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+     .header {
+            background-color: #2196f3;
+            color: #fff;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+     .header h2 {
+            margin: 0;
+        }
+
+     .form-container {
+            padding: 20px;
+        }
+
+     .form-group {
+            margin-bottom: 20px;
+        }
+
+     .form-label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+     .form-input {
+            width: 90%; /* changed from 300px to 90% to make it slightly smaller than the main box */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+     .btn {
+            background-color: #2196f3;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+     .btn:hover {
+            background-color: #1976d2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Agregar Pieza de Coche</h2>
+        </div>
+        <div class="form-container">
+            <form id="add-part-form">
+                <div class="form-group">
+                    <label class="form-label" for="part_name">Nombre de la Pieza:</label>
+                    <input type="text" id="part_name" name="part_name" class="form-input" />
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="part_number">Numero de la Pieza:</label>
+                    <input type="text" id="part_number" name="part_number" class="form-input" />
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="price">Precio:</label>
+                    <input type="text" id="price" name="price" class="form-input" pattern="[0-9$.,]+" />
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="quantity">Cantidad:</label>
+                    <input type="text" id="quantity" name="quantity" class="form-input" pattern="[0-9]+" />
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="description">Descripcion:</label>
+                    <textarea id="description" name="description" class="form-input" rows="5"></textarea>
+                </div>
+                <button class="btn" id="add-part-btn">Agregar Pieza de Coche</button>
+                <a href="index.html" class="btn">Return to Index</a>
+                <div id="response"></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('add-part-btn').addEventListener('click', function(event) {
+            event.preventDefault();
+            var formData = new FormData(document.getElementById('add-part-form'));
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'add_part.php', true);
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    document.getElementById('response').innerHTML = 'Part added successfully!';
+                } else {
+                    document.getElementById('response').innerHTML = 'Error adding part!';
+                }
+            };
+            xhr.send(formData);
+        });
+    </script>
+</body>
+</html>
