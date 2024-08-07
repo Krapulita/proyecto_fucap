@@ -10846,3 +10846,33 @@ html {
   background-repeat: no-repeat;
   min-height: 15rem;
 }
+
+/* Estilo para el botón de Google */
+.btn-google {
+  display: flex; /* Cambiar a flex para alinear mejor los íconos y el texto */
+  align-items: center;
+  justify-content: center;
+  background: #4285f4;
+  color: #fff;
+  border: 1px solid #4285f4;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+  width: 100%; /* Asegura que el botón ocupe todo el ancho del contenedor */
+  max-width: 200px; /* Ajusta para que coincida con el botón principal */
+  height: 45px; /* Ajusta la altura del botón */
+  margin-top: 10px; /* Espacio encima del botón de Google */
+}
+
+.btn-google:hover {
+  background: #357ae8;
+  border-color: #357ae8;
+}
+
+.btn-google i {
+  margin-right: 8px;
+}
