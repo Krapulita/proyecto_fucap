@@ -4,7 +4,6 @@ include "navbar.php";
 ?>
 
 
-
 <div class="container" style="margin-top:30px">
   <div class="row">
     <div class="col-sm-4 text-center">
@@ -47,8 +46,8 @@ include "navbar.php";
   </div>
 </div>
 
-
-
-
+<div class="container text-center" style="margin-top: 20px;">
+  <a href="../index.html" class="btn btn-primary">Volver</a>
+</div>
 
 <?php include "footer.php";?>
