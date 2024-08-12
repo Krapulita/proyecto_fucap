@@ -1,10 +1,10 @@
 <?php
 // Connect to the database
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "tuercas";
-$conn = mysqli_connect("localhost", "root", "", "tuercas");
+$username = "kradmin";
+$password = "452.Krapu";
+$dbname = "bdd_usuarios";
+$conn = mysqli_connect("localhost", "kradmin", "452.Krapu", "bdd_usuarios");
 
 // Check connection
 if (!$conn) {

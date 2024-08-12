@@ -1,8 +1,8 @@
 <?php
-$hostname = 'localhost';
-$username = 'root';
-$password = '';
-$database = 'tuercas';
+$servername = "localhost";
+$username = "kradmin";
+$password = "452.Krapu";
+$dbname = "bdd_usuarios";
 
 // Create connection
 $conn = new mysqli($hostname, $username, $password, $database);

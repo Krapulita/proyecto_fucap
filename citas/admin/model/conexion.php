@@ -1,8 +1,8 @@
 <?php
 #propiedades de host
-$pass='';
-$user = 'root';
-$namedb = 'tuercas';
+$pass='452.Krapu';
+$user = 'kradmin';
+$namedb = 'bdd_usuarios';
 
 try {
     $db = new PDO(
