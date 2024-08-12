@@ -1,10 +1,10 @@
 <?php
 // Connect to the database
 $servername = "localhost";
-$username = "Sebadmin";
-$password = "5(JrO6ddM!Qp]g[-";
+$username = "root";
+$password = "";
 $dbname = "tuercas";
-$conn = mysqli_connect("localhost", "Sebadmin", "5(JrO6ddM!Qp]g[-", "tuercas");
+$conn = mysqli_connect("localhost", "root", "", "tuercas");
 
 // Check connection
 if (!$conn) {
