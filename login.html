@@ -21,16 +21,18 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-5">
-                <a class="navbar-brand" href="index.html">Taller Mecánico</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <a class="navbar-brand" href="index.html">Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">Acerca de Nosotros</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="informe.html">Informe</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mi Cuenta</a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownAccount" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mi Cuenta</a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownAccount">
                                 <li><a class="dropdown-item" href="login.html">Iniciar Sesion</a></li>
                                 <li><a class="dropdown-item" href="register.html">Crear Cuenta</a></li>
                             </ul>
@@ -49,7 +51,7 @@
                             <p class="lead fw-normal text-white-50 mb-4">Ingrese sus credenciales para acceder a su cuenta</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                                 <!-- Formulario de inicio de sesión -->
-                                <form action="login.php" method="post">
+                                <form action="index.html" method="post">
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
                                         <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
@@ -59,6 +61,10 @@
                                         <input type="password" name="password" class="form-control" id="exampleInputPassword1" required>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                                    <!-- Enlace para olvidé mi contraseña -->
+                                    <div class="mt-2">
+                                        <a href="forgot_password.html" class="btn btn-link">Olvidé mi contraseña</a>
+                                    </div>
                                 </form>
                                 <!-- Botón de Google Sign-In -->
                                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center mt-3">
