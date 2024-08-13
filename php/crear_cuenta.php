@@ -78,7 +78,7 @@ if (!$errors) {
         echo "Cuenta creada con éxito. Redirigiendo al Home en 5 segundos...";
         echo '<script>
                 setTimeout(function() {
-                    window.location.href = "/index.html";
+                    window.location.href = "../index.html";
                 }, 5000);
               </script>';
     } else {
