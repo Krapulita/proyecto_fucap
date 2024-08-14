@@ -9,14 +9,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
 
     // Consulta para verificar el inicio de sesión
-    $query = "SELECT * FROM usuarios WHERE username = :username";
+    $query = "SELECT * FROM usuarios WHERE nombre = :nombre";
     $stmt = $db->prepare($query);
-    $stmt->bindParam(":username", $username);
+    $stmt->bindParam(":nombre", $username);
     $stmt->execute();
 
     if ($stmt->rowCount() > 0) {
         $row = $stmt->fetch();
-        $hashed_password = $row['password'];
+        $hashed_password = $row['contrasena'];
 
         if (password_verify($password, $hashed_password)) {
             $_SESSION['usuario_id'] = $row['id'];

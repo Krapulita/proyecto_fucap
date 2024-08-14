@@ -2,7 +2,7 @@
 #propiedades de host
 $pass='';
 $user = 'root';
-$namedb = 'tuercas';
+$namedb = 'bdd_usuarios';
 
 try {
     $db = new PDO(
