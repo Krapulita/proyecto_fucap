@@ -16,9 +16,9 @@ ___
     1.1 [Objetivo](#objetivo)    
     1.2 [Roles](#roles)   
 
-2. [Descripcion del Proyecto](#descripción-del-proyecto)    
+2. [Descripción del Proyecto](#descripción-del-proyecto)    
     2.1 [Visión General](#visión-general)   
-    2.2 [Características del sistema](#características-del-sistema) 
+    2.2 [Características del Sistema](#características-del-sistema) 
 
 3. [Análisis De Requisitos](#análisis-de-requisitos)    
     3.1 [Requisitos Funcionales](#requisitos-funcionales)   
@@ -26,8 +26,9 @@ ___
 
 4. [Desarrollo Seguro](#desarrollo-seguro-rol-del-implementador)
 5. [Implementación](#implementacion-rol-del-implementador)
-6. [Evaluación del sistema](#evaluacion-del-sistema-rol-del-evaluador)
+6. [Evaluación del Sistema](#evaluacion-del-sistema-rol-del-evaluador)
 7. [Conclusiones](#conclusiones)
+8. [Anexos](#anexos)
 
 ___
 
@@ -42,13 +43,15 @@ El presente informe tiene como objetivo detallar el despliegue final de la aplic
 Analista: Encargado de identificar los requisitos funcionales y no funcionales, analizar necesidades de seguridad de la aplicación, evaluar posibles amenazas de seguridad y proponer medidas de protección de datos sensibles.
 
 Implementador:
-Evaluadora
+
+Evaluador:
+
 
 ## Descripción del Proyecto: 
 
 #### Visión general: 
 
-La página de Garras y Tuercas ofrece a usuarios la posibilidad de agendar sus servicios y realizar compras de manera online, esto a traves de una cuenta de usuario que deben crear previamente. 
+La página de Garras y Tuercas ofrece a usuarios la posibilidad de agendar sus servicios y realizar compras de manera online, esto a través de una cuenta de usuario que deben crear previamente. 
 
 #### Características del Sistema: 
 
@@ -62,15 +65,15 @@ En esta sección se detallan los requisitos considerados al momento de desarroll
 
 + *Registro de usuarios:* 
     + Descripción: Los usuarios deben poder crear una cuenta en la página, entregando información personal y de contacto. 
-    + Campos Requeridos: Nombres, Apellidos, dirección de correo electrónico, número de contacto, credenciales de acceso (nombre de usuario y contraseña)
-    + Validación de los datos: Validación de entradas (como el formato de correo electrónico)
+    + Campos Requeridos: Nombres, apellidos, dirección de correo electrónico, número de contacto, credenciales de acceso (nombre de usuario y contraseña).
+    + Validación de los datos: Validación de entradas (como el formato de correo electrónico).
 
     ![Captura de Registro de usuario](/assets/images/register.jpg)
 
 + *Inicio de Sesión:* 
     + Descripción: Los usuarios deben poder acceder al sistema a través de autenticación de usuario y contraseña o mediante Google Sign-In. Se anexa un [diagrama de flujo](#diagrama-casos-de-uso) para los casos de uso.
     + Campos Requeridos: Dirección de correo electrónico y contraseña, opción de inicio de sesión con Google.
-    + Funcion Adicional: Recuperación de contraseña a través de un enlace enviado al correo electrónico del usuario.
+    + Función Adicional: Recuperación de contraseña a través de un enlace enviado al correo electrónico del usuario.
 
     ![Captura de Login de usuario](/assets/images/login.jpg)
 
@@ -99,7 +102,7 @@ En esta sección se detallan los requisitos considerados al momento de desarroll
     + Actualizaciones y Copias de Seguridad: Implementar un calendario con actualizaciones regulares y asegurar copias de seguridad de manera periódica.
 
 + *Usabilidad:*
-    + Interfaz de usuario: Esta debe ser intuitiva y facil de usar para todos los usuarios.
+    + Interfaz de usuario: Esta debe ser intuitiva y fácil de usar para todos los usuarios.
 
 + *Rendimiento:*
     + La aplicación debe ser capaz de manejar múltiples usuarios a la vez.
