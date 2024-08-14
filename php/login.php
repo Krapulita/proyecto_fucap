@@ -37,6 +37,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Buscar al usuario en la base de datos
     $stmt = $conn->prepare("SELECT contrasena FROM usuarios WHERE correo_electronico = ?");
+    if (!$stmt) {
+        die("Error en la preparación de la declaración: " . $conn->error);
+    }
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $stmt->store_result();
@@ -46,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Verificar la contraseña
     if (password_verify($password, $hashed_password)) {
         // Contraseña correcta
+        $_SESSION['loggedin'] = true; // Indicar que el usuario está autenticado
         $_SESSION['user_email'] = $email;
         header('Location: index.php');
         exit;
@@ -58,16 +62,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $conn->close();
 } else if (isset($_GET['code'])) {
     // El usuario ha sido redirigido desde Google después de la autenticación
-    $client->fetchAccessTokenWithAuthCode($_GET['code']);
-    $oauth2 = new Google_Service_Oauth2($client);
-    $userInfo = $oauth2->userinfo->get();
+    try {
+        $client->fetchAccessTokenWithAuthCode($_GET['code']);
+        $oauth2 = new Google_Service_Oauth2($client);
+        $userInfo = $oauth2->userinfo->get();
 
-    // Manejar la información del usuario
-    $_SESSION['user_email'] = $userInfo->email;
+        // Manejar la información del usuario
+        $_SESSION['loggedin'] = true; // Indicar que el usuario está autenticado
+        $_SESSION['user_email'] = $userInfo->email;
 
-    // Redirigir al usuario a la página de inicio o donde desees
-    header('Location: index.html');
-    exit;
+        // Redirigir al usuario a la página de inicio o donde desees
+        header('Location: index.php');
+        exit;
+    } catch (Exception $e) {
+        // Manejo de errores de Google OAuth
+        echo 'Error en la autenticación de Google: ' . $e->getMessage();
+    }
 } else {
     // El usuario no ha sido autenticado, redirigir a Google para la autenticación
     $authUrl = $client->createAuthUrl();
