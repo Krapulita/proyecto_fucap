@@ -9,6 +9,7 @@
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+  <script src="js/scripts.js"></script>
   <link href="css/styles.css" rel="stylesheet" />
   <style>
     .carousel-inner img {
@@ -36,13 +37,8 @@
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item"><a class="nav-link" href="about.html">Acerca de Nosotros</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
-            <li class="nav-item"><a class="nav-link" href="informe.html">Informe</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" id="navbarDropdownAccount" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mi Cuenta</a>
-              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownAccount">
-                <li><a class="dropdown-item" href="login.html">Iniciar Sesion</a></li>
-                <li><a class="dropdown-item" href="register.html">Crear Cuenta</a></li>
-              </ul>
+            <li class="nav-item dropdown" id="accountDropdown">
+              <!-- El contenido se llenará dinámicamente con JavaScript -->
             </li>
           </ul>
         </div>
@@ -106,7 +102,7 @@
             </div>
           </div>
         </div>
-        <div class="row gx-5">
+        <div class="row gx-5 justify-content-center">
           <!-- Card 1: Agenda tu Cita -->
           <div class="col-lg-4 mb-5">
             <a class="text-decoration-none module-link" href="citas/index.php">
@@ -133,19 +129,7 @@
               </div>
             </a>
           </div>
-          <!-- Card 3: Servicios de Scanner -->
-          <div class="col-lg-4 mb-5">
-            <a class="text-decoration-none module-link" href="scanner.html">
-              <div class="card h-100 shadow border-0">
-                <img class="card-img-top" src="assets/images/scanner2.jpg" alt="Servicios de Scanner" />
-                <div class="card-body p-4">
-                  <div class="badge bg-primary bg-gradient rounded-pill mb-2">Escanea tu vehículo</div>
-                  <h5 class="card-title mb-3">Servicios de Scanner</h5>
-                  <p class="card-text mb-0">Accede a nuestros servicios de escaneo OBD2 para un diagnóstico preciso.</p>
-                </div>
-              </div>
-            </a>
-          </div>
+          
         </div>
       </div>
     </section>
@@ -163,7 +147,7 @@
           <a class="text-white-50" href="terms.html">Términos y condiciones</a>
         </div>
         <div class="col-md-4 text-end">
-          <a class="btn btn-outline-light btn-social mx-1" href="https://twitter.com/yourusername"><i class="bi bi-twitter"></i></a>
+          <a class="btn btn-outline-light btn-social mx-1" href="https://twitter.com/garrasytuercas"><i class="bi bi-twitter"></i></a>
           <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/yourusername"><i class="bi bi-linkedin"></i></a>
         </div>
       </div>
@@ -175,39 +159,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 
   <!-- Tu código JavaScript -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Hacer una solicitud AJAX a auth.php para verificar si el usuario está autenticado
-      fetch('php/auth.php')
-        .then(response => response.json())
-        .then(data => {
-          // Verifica si el usuario está autenticado
-          var isAuthenticated = data.isLoggedIn;
 
-          // Selecciona todos los enlaces de los módulos
-          var moduleLinks = document.querySelectorAll('.module-link');
 
-          moduleLinks.forEach(function(link) {
-            // Si el usuario no está autenticado, evita la acción del enlace y muestra el tooltip
-            if (!isAuthenticated) {
-              link.addEventListener('click', function(event) {
-                event.preventDefault();
-                // Muestra un mensaje o redirige al login si lo prefieres
-                alert('Debes iniciar sesión para acceder a este módulo.');
-              });
-            }
-          });
-
-          // Inicializa los tooltips
-          var tooltips = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-          tooltips.forEach(function(tooltip) {
-            new bootstrap.Tooltip(tooltip);
-          });
-        })
-        .catch(error => {
-          console.error('Error al verificar el estado de autenticación:', error);
-        });
-    });
-  </script>
 </body>
 </html>

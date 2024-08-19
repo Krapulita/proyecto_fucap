@@ -1,4 +1,7 @@
 <?php
+// Simple script to test if login.php is working
+echo "El archivo login.php está funcionando.";
+
 require_once __DIR__ . '/../vendor/autoload.php'; // Asegúrate de que esta ruta es correcta
 
 use Dotenv\Dotenv;
@@ -51,7 +54,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Contraseña correcta
         $_SESSION['loggedin'] = true; // Indicar que el usuario está autenticado
         $_SESSION['user_email'] = $email;
-        header('Location: index.php');
+
+        //Obtener el nombre de usuario
+        $stmt = $conn->prepare("SELECT nombre_usuario FROM usuarios WHERE correo_electronico = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($row = $result->fetch_assoc()) {
+            $_SESSION['nombre_usuario'] = $row['nombre_usuario'];
+        }
+
+        header('Location: http://garrasytuercas.cl/index.html'); // Redirige al usuario a la página principal
         exit;
     } else {
         // Contraseña incorrecta
@@ -70,9 +83,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Manejar la información del usuario
         $_SESSION['loggedin'] = true; // Indicar que el usuario está autenticado
         $_SESSION['user_email'] = $userInfo->email;
+        $_SESSION['nombre_usuario'] = $userInfo->name; //Google proporciona el nombre
 
-        // Redirigir al usuario a la página de inicio o donde desees
-        header('Location: index.php');
+        // Guarda la informacion de usuario de Google en la BDD
+        $stmt = $conn->prepare("INSERT INTO usuarios (nombre_usuario, correo_electrónico) VALUES (?, ?) ON DUPLICATE KEY UPDATE nombre_usuario = VALUES(nombre_usuario)");
+        $stmt->bind_param("ss", $userInfo->name, $userInfo->email);
+        $stmt->execute();
+        
+        header('Location: index.html'); // Redirige al usuario a la página principal
         exit;
     } catch (Exception $e) {
         // Manejo de errores de Google OAuth
