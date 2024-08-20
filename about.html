@@ -11,6 +11,7 @@
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
+        <script src="js/scripts.js"></script>
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body class="d-flex flex-column">
@@ -26,13 +27,8 @@
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item"><a class="nav-link" href="about.html">Acerca de Nosotros</a></li>
                             <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
-							<li class="nav-item"><a class="nav-link" href="informe.html">Informe</a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdownAccount" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mi Cuenta</a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownAccount">
-                                    <li><a class="dropdown-item" href="login.html">Iniciar Sesion</a></li>
-                                    <li><a class="dropdown-item" href="register.html">Crear Cuenta</a></li>
-                                </ul>
+                            <li class="nav-item dropdown" id="accountDropdown">
+                                <!-- El contenido se llenará dinámicamente con JavaScript -->
                             </li>
                         </ul>
                     </div>
@@ -46,7 +42,7 @@
                             <div class="text-center my-5">
                                 <h1 class="fw-bolder mb-3">En Garras Y Tuercas, nos especializamos en ofrecer servicios con un enfoque en la calidad y la satisfacción del cliente. </h1>
                                 <p class="lead fw-normal text-muted mb-4">Contamos con un equipo de mecánicos certificados y utilizamos tecnología avanzada, como escáneres OBD2, para diagnosticar y solucionar problemas con precisión. Nuestro compromiso es brindar un servicio honesto y eficiente, asegurando que tu vehículo esté en las mejores manos. ¡Tu seguridad en la carretera es nuestra prioridad!.</p>
-                                <a class="btn btn-primary btn-lg" href="pagina-reserva.html">Agenda tu hora!</a>
+                                
                             </div>
                         </div>
                     </div>
@@ -71,7 +67,7 @@
             <section class="py-5">
                 <div class="container px-5 my-5">
                     <div class="row gx-5 align-items-center">
-                        <div class="col-lg-6 order-first order-lg-last"><img class="img-fluid rounded mb-5 mb-lg-0" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." /></div>
+                        <div class="col-lg-6 order-first order-lg-last"><img class="img-fluid rounded mb-5 mb-lg-0" src="assets/images/trabajador.jpg" alt="..." /></div>
                         <div class="col-lg-6">
                             <h2 class="fw-bolder">Nuestro Desarrollo</h2>
                             <p class="lead fw-normal text-muted mb-0">Desde nuestros humildes comienzos, hemos crecido significativamente, expandiendo nuestras instalaciones y ampliando nuestro equipo con mecánicos altamente calificados. Hoy en día, ofrecemos una amplia gama de servicios, desde diagnósticos avanzados hasta reparaciones completas, siempre enfocados en la satisfacción del cliente y la calidad del servicio.</p>
@@ -79,7 +75,7 @@
                     </div>
                 </div>
             </section>
-            <!-- Team members section-->
+            <!-- Team members section
             <section class="py-5 bg-light">
                 <div class="container px-5 my-5">
                     <div class="text-center">
@@ -108,7 +104,7 @@
                                 <div class="fst-italic text-muted">Jefe Mecánico</div>
                             </div>
                         </div>
-                        <!--<div class="col mb-5">
+                        <div class="col mb-5">
                             <div class="text-center">
                                 <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..." />
                                 <h5 class="fw-bolder">Malvina Cilla</h5>
@@ -120,20 +116,23 @@
             </section>
         </main>
         <!-- Footer-->
-        <footer class="bg-dark py-4 mt-auto">
+        <footer class="bg-dark py-4">
             <div class="container px-5">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Your Website 2023</div></div>
-                    <div class="col-auto">
-                        <a class="link-light small" href="#!">Privacy</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="#!">Terms</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="#!">Contact</a>
-                    </div>
+              <div class="row align-items-center justify-content-between">
+                <div class="col-md-4 small">
+                  <div class="text-white-50">Taller Mecánico Garras Y Tuercas © 2024</div>
                 </div>
+                <div class="col-md-4 text-center">
+                  <a class="text-white-50" href="privacy.html">Política de privacidad</a> ·
+                  <a class="text-white-50" href="terms.html">Términos y condiciones</a>
+                </div>
+                <div class="col-md-4 text-end">
+                  <a class="btn btn-outline-light btn-social mx-1" href="https://twitter.com/garrasytuercas"><i class="bi bi-twitter"></i></a>
+                  <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/yourusername"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
             </div>
-        </footer>
+          </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->

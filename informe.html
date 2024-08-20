@@ -9,7 +9,7 @@
   <div id="markdown-content"></div>
   <script>
     async function renderMarkdown() {
-      const response = await fetch('informe_avance_gyt.md');
+      const response = await fetch('Informe_Final.md');
       const text = await response.text();
       const converter = new showdown.Converter();
       const html = converter.makeHtml(text);

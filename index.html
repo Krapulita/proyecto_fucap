@@ -9,6 +9,7 @@
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+  <script src="js/scripts.js"></script>
   <link href="css/styles.css" rel="stylesheet" />
   <style>
     .carousel-inner img {
@@ -17,201 +18,148 @@
         object-fit: cover;
     }
     .card-img-top {
-    width: 100%; /* Asegura que la imagen se ajuste al ancho del contenedor */
-    height: 200px; /* Ajusta la altura deseada */
-    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin deformarse */
+      width: 100%; /* Asegura que la imagen se ajuste al ancho del contenedor */
+      height: 200px; /* Ajusta la altura deseada */
+      object-fit: cover; /* Asegura que la imagen cubra el contenedor sin deformarse */
     }
-    </style>
+  </style>
 </head>
 <body class="d-flex flex-column h-100">
   <main class="flex-shrink-0"> 
-
-<!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="container px-5">
-                    <a class="navbar-brand" href="index.html">Home</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="about.html">Acerca de Nosotros</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
-							<li class="nav-item"><a class="nav-link" href="informe.html">Informe</a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdownAccount" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mi Cuenta</a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownAccount">
-                                    <li><a class="dropdown-item" href="login.html">Iniciar Sesion</a></li>
-                                    <li><a class="dropdown-item" href="register.html">Crear Cuenta</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            
-<!-- Header-->
-            <header class="bg-dark py-5">
-                <div class="container px-5">
-                    <div class="row gx-5 align-items-center justify-content-center">
-                        <div class="col-lg-8 col-xl-7 col-xxl-6">
-                            <div class="my-5 text-center text-xl-start">
-                                <h1 class="display-5 fw-bolder text-white mb-2">Taller Mecánico Garras Y Tuercas</h1>
-                                <p class="lead fw-normal text-white-50 mb-4">Servicios personalizados para soluciones mecánicas eficientes al alcance de un click</p>
-                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                                    <a class="btn btn-primary btn-lg px-4 me-sm-3" href="login.html">Inicia Sesión</a>
-                                    <a class="btn btn-outline-light btn-lg px-4" href="contact.html">Contáctanos</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
-                            <div id="carouselExampleIndicators" class="carousel slide my-5" data-bs-ride="carousel">
-                                <div class="carousel-indicators">
-                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                </div>
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="assets/images/worker.jpg" class="d-block w-100" alt="Imagen 1">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="assets/images/repuestos.jpeg" class="d-block w-100" alt="Imagen 2">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="assets/images/scanner.jpg" class="d-block w-100" alt="Imagen 3">
-                                    </div>
-                                </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-            
-<!-- Seccion Agenda tu Servicio-->
-             <section class="py-5">
-                <div class="container px-5 my-5">
-                    <div class="row gx-5 justify-content-center">
-                        <div class="col-lg-8 col-xl-6">
-                            <div class="text-center">
-                                <h2 class="fw-bolder">Escoge tu servicio</h2>
-                                <p class="lead fw-normal text-muted mb-5">A solo un click de distancia</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row gx-5">
-                        <!-- Card 1: Agenda tu Cita -->
-                        <div class="col-lg-4 mb-5">
-                            <a class="text-decoration-none" href="citas/index.php">
-                                <div class="card h-100 shadow border-0">
-                                    <img class="card-img-top" src="assets/images/mecanico.jpg" alt="Agenda tu Cita" />
-                                    <div class="card-body p-4">
-                                        <div class="badge bg-primary bg-gradient rounded-pill mb-2">Protégete</div>
-                                        <h5 class="card-title mb-3">Agenda tu Cita</h5>
-                                        <p class="card-text mb-0">Agenda una cita para tu vehículo con uno de nuestros expertos mecánicos</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- Card 2: Compra tu Repuesto -->
-                        <div class="col-lg-4 mb-5">
-                            <a class="text-decoration-none" href="buypage/compra_index.php">
-                                <div class="card h-100 shadow border-0">
-                                    <img class="card-img-top" src="assets/images/repuestos2.jpg" alt="Compra tu Repuesto" />
-                                    <div class="card-body p-4">
-                                        <div class="badge bg-primary bg-gradient rounded-pill mb-2">Ofertas!</div>
-                                        <h5 class="card-title mb-3">Compra tu Repuesto</h5>
-                                        <p class="card-text mb-0">Revisa nuestro catálogo de respuestos y accede a pagos en línea.</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- Card 3: Servicios de Scanner -->
-                        <div class="col-lg-4 mb-5">
-                            <a class="text-decoration-none" href="scanner.html">
-                                <div class="card h-100 shadow border-0">
-                                    <img class="card-img-top" src="assets/images/scanner2.jpg" alt="Servicios de Scanner" />
-                                    <div class="card-body p-4">
-                                        <div class="badge bg-primary bg-gradient rounded-pill mb-2">Scánneate</div>
-                                        <h5 class="card-title mb-3">Servicios de Scanner</h5>
-                                        <p class="card-text mb-0">Reserva ya tu cita con nuestra última tecnología en scanners permitiendo la lectura del computador (ECU) del vehículo para interpretar errores y desperfectos en el código.</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-<!-- Seccion Opiniones-->
-            <div class="py-5 bg-light">
-                <div class="container px-5 my-5">
-                    <div class="row gx-5 justify-content-center">
-                        <div class="col-lg-10 col-xl-7">
-                            <div class="text-center">
-                                <div class="fs-4 mb-4 fst-italic">"Llevé mi auto para un escaneo OBD2 y el servicio fue rápido y profesional. El personal me explicó todo de manera clara y resolvió mi problema. ¡Muy recomendable!"</div>
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <img class="rounded-circle me-3" src="assets/images/thumbsup.png" alt="" width="50px" />
-                                    <div class="fw-bold">
-                                        Elga Tito
-                                        <span class="fw-bold text-primary mx-1">/</span>
-                                        Valparaíso
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container px-5">
+        <a class="navbar-brand" href="index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="about.html">Acerca de Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
+            <li class="nav-item dropdown" id="accountDropdown">
+              <!-- El contenido se llenará dinámicamente con JavaScript -->
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- Header-->
+    <header class="bg-dark py-5">
+      <div class="container px-5">
+        <div class="row gx-5 align-items-center justify-content-center">
+          <div class="col-lg-8 col-xl-7 col-xxl-6">
+            <div class="my-5 text-center text-xl-start">
+              <h1 class="display-5 fw-bolder text-white mb-2">Taller Mecánico Garras Y Tuercas</h1>
+              <p class="lead fw-normal text-white-50 mb-4">Servicios personalizados para soluciones mecánicas eficientes al alcance de un click</p>
+              <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                <a class="btn btn-primary btn-lg px-4 me-sm-3" href="login.html">Inicia Sesión</a>
+                <a class="btn btn-outline-light btn-lg px-4" href="contact.html">Contáctanos</a>
+              </div>
             </div>
-            
-<!-- Call to action-->
-                    <aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5 mt-5">
-                        <div class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
-                            <div class="mb-4 mb-xl-0">
-                                <div class="fs-3 fw-bold text-white">Suscríbete a nuestro catálogo</div>
-                                <div class="text-white-50">Recibe en tu correo ofertas y actualizaciones.</div>
-                            </div>
-                            <div class="ms-xl-4">
-                                <div class="input-group mb-2">
-                                    <input class="form-control" type="text" placeholder="Email address..." aria-label="Email address..." aria-describedby="button-newsletter" />
-                                    <button class="btn btn-outline-light" id="button-newsletter" type="button">Registrarse</button>
-                                </div>
-                                <div class="small text-white-50">Nos importa tu privacidad. No compartiremos tus datos.</div>
-                            </div>
-                        </div>
-                    </aside>
+          </div>
+          <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
+            <div id="carouselExampleIndicators" class="carousel slide my-5" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="assets/images/worker.jpg" class="d-block w-100" alt="Imagen 1">
                 </div>
-            </section> 
-        </main>
-
-<!-- Footer-->
-        <footer class="bg-dark py-4 mt-auto">
-            <div class="container px-5">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Your Website 2023</div></div>
-                    <div class="col-auto">
-                        <a class="link-light small" href="#!">Privacy</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="#!">Terms</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="#!">Contacto</a>
-                    </div>
+                <div class="carousel-item">
+                  <img src="assets/images/repuestos.jpeg" class="d-block w-100" alt="Imagen 2">
                 </div>
+                <div class="carousel-item">
+                  <img src="assets/images/scanner.jpg" class="d-block w-100" alt="Imagen 3">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <!-- Sección Agenda tu Servicio -->
+    <section class="py-5">
+      <div class="container px-5 my-5">
+        <div class="row gx-5 justify-content-center">
+          <div class="col-lg-8 col-xl-6">
+            <div class="text-center">
+              <h2 class="fw-bolder">Escoge tu servicio</h2>
+              <p class="lead fw-normal text-muted mb-5">A solo un click de distancia</p>
+            </div>
+          </div>
+        </div>
+        <div class="row gx-5 justify-content-center">
+          <!-- Card 1: Agenda tu Cita -->
+          <div class="col-lg-4 mb-5">
+            <a class="text-decoration-none module-link" href="citas/index.php">
+              <div class="card h-100 shadow border-0">
+                <img class="card-img-top" src="assets/images/mecanico.jpg" alt="Agenda tu Cita" />
+                <div class="card-body p-4">
+                  <div class="badge bg-primary bg-gradient rounded-pill mb-2">Protégete</div>
+                  <h5 class="card-title mb-3">Agenda tu Cita</h5>
+                  <p class="card-text mb-0">Agenda una cita para tu vehículo con uno de nuestros expertos mecánicos</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- Card 2: Compra tu Repuesto -->
+          <div class="col-lg-4 mb-5">
+            <a class="text-decoration-none module-link" href="buypage/compra_index.php">
+              <div class="card h-100 shadow border-0">
+                <img class="card-img-top" src="assets/images/repuestos2.jpg" alt="Compra tu Repuesto" />
+                <div class="card-body p-4">
+                  <div class="badge bg-primary bg-gradient rounded-pill mb-2">Ofertas!</div>
+                  <h5 class="card-title mb-3">Compra tu Repuesto</h5>
+                  <p class="card-text mb-0">Revisa nuestro catálogo de respuestos y accede a pagos en línea.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer-->
+  <footer class="bg-dark py-4">
+    <div class="container px-5">
+      <div class="row align-items-center justify-content-between">
+        <div class="col-md-4 small">
+          <div class="text-white-50">Taller Mecánico Garras Y Tuercas © 2024</div>
+        </div>
+        <div class="col-md-4 text-center">
+          <a class="text-white-50" href="privacy.html">Política de privacidad</a> ·
+          <a class="text-white-50" href="terms.html">Términos y condiciones</a>
+        </div>
+        <div class="col-md-4 text-end">
+          <a class="btn btn-outline-light btn-social mx-1" href="https://twitter.com/garrasytuercas"><i class="bi bi-twitter"></i></a>
+          <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/yourusername"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 
-    </body>
+  <!-- Tu código JavaScript -->
+
+
+</body>
 </html>
